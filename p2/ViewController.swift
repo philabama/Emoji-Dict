@@ -10,21 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var tf1: UITextField!
+    @IBOutlet var tf2: UITextField!
+    
     @IBOutlet var theLabel: UILabel!
 
     var tapCnt = 0
+    var Ttl = ""
+    
+    let addition = false
+    
     
     @IBAction func hteBtn(_ sender: Any) {
-        theLabel.text = "YO"
-        print("yo Console!")
+       //print(tf1.text!)
+        //print(tf2.text!)
         
-        tapCnt = tapCnt + 1
-        print (tapCnt)
-        
-        if tapCnt >= 10{
-        theLabel.text = "You tapped 10 times!"
-        }}
-    
+        if addition{
+        theLabel.text = "Answer: \(Int(tf1.text!)! + Int(tf2.text!)!)"
+    }
+        else{
+            theLabel.text = "Answer: \(Int(tf1.text!)! - Int(tf2.text!)!)"
+        }
+        }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
